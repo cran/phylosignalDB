@@ -1,0 +1,14 @@
+citHeader("To cite phylosignalDB in publications use:")
+
+bibentry(
+  bibtype  = "Article",
+  title    = "A Unified Method for Detecting Phylogenetic Signals in Continuous, Discrete, and Multiple Trait Combinations",
+  author   = c(person("Liang", "Yao"), person("Ye", "Yuan")),
+  journal  = "Ecology and Evolution",
+  year     = "2025",
+  volume   = "15",
+  pages    = "e71106",
+  doi      = "10.1002/ece3.71106"
+)
+
+citFooter("For questions or feedback, please contact the authors at yaoliang986@ahnu.edu.cn or yuanye_1985@ahnu.edu.cn.")

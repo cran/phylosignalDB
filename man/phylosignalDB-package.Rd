@@ -6,7 +6,7 @@
 \alias{phylosignalDB-package}
 \title{phylosignalDB: Explore Phylogenetic Signals Using Distance-Based Methods}
 \description{
-A unified method, called M statistic, is provided for detecting phylogenetic signals in continuous traits, discrete traits, and multi-trait combinations. Blomberg and Garland (2002) \doi{10.1046/j.1420-9101.2002.00472.x} provided a widely accepted statistical definition of the phylogenetic signal, which is the "tendency for related species to resemble each other more than they resemble species drawn at random from the tree". The M statistic strictly adheres to the definition of phylogenetic signal, formulating an index and developing a method of testing in strict accordance with the definition, instead of relying on correlation analysis or evolutionary models. The novel method equivalently expressed the textual definition of the phylogenetic signal as an inequality equation of the phylogenetic and trait distances and constructed the M statistic. Also, there are more distance-based methods under development.
+A unified method, called M statistic, is provided for detecting phylogenetic signals in continuous traits, discrete traits, and multi-trait combinations. Blomberg and Garland (2002) \doi{10.1046/j.1420-9101.2002.00472.x} provided a widely accepted statistical definition of the phylogenetic signal, which is the "tendency for related species to resemble each other more than they resemble species drawn at random from the tree". The M statistic strictly adheres to the definition of phylogenetic signal, formulating an index and developing a method of testing in strict accordance with the definition, instead of relying on correlation analysis or evolutionary models. The novel method equivalently expressed the textual definition of the phylogenetic signal as an inequality equation of the phylogenetic and trait distances and constructed the M statistic. The M statistic implemented in this package is based on the methodology described in Yao and Yuan (2025) \doi{10.1002/ece3.71106}. If you use this method in your research, please cite the paper.
 }
 \seealso{
 Useful links:
@@ -17,11 +17,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Liang Yao \email{dylanyao@126.com}
+\strong{Maintainer}: Liang Yao \email{yaoliang986@ahnu.edu.cn}
 
 Authors:
 \itemize{
-  \item Ye Yuan \email{yuanye_1985@126.com}
+  \item Ye Yuan \email{yuanye_1985@ahnu.edu.cn}
 }
 
 }

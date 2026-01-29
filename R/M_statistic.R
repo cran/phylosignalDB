@@ -59,6 +59,7 @@ gower_dist <- function(x, type = list(),
 #' with the definition, instead of relying on correlation analysis or evolutionary models.
 #' The novel method equivalently expressed the textual definition of the phylogenetic signal
 #' as an inequality equation of the phylogenetic and trait distances and constructed the M statistic.
+#' The M statistic implemented in this package is based on the methodology described in Yao and Yuan (2025) <doi:10.1002/ece3.71106>. If you use this method in your research, please cite the paper.
 #'
 #' @param trait_dist A distance object of class `matrix` or `dist`.
 #'    Its row and column names should match the tip labels of the phylogenetic tree (`phy`).
@@ -70,6 +71,8 @@ gower_dist <- function(x, type = list(),
 #' @returns A value that lies between 0 and 1, inclusive.
 #' @references
 #'    Blomberg, S.P. & Garland, T., Jr (2002) Tempo and mode in evolution: phylogenetic inertia, adaptation and comparative methods. Journal of Evolutionary Biology, 15(6): 899-910.
+#'
+#'    Yao, L. and Yuan, Y. (2025), A Unified Method for Detecting Phylogenetic Signals in Continuous, Discrete, and Multiple Trait Combinations. Ecology and Evolution, 15: e71106.
 #'
 #'
 #' @seealso [M_rand_perm()] [phylosignal_M()]
@@ -107,9 +110,9 @@ M_stat <- function(trait_dist = NULL, phy = NULL, auto_multi2di = TRUE){
   if (!ape::is.rooted(phy)) {
     stop("The 'phy' tree must be rooted.")
   }
-  if (!ape::is.ultrametric(phy)) {
-    stop("The 'phy' tree is not ultrametric such that all tips are at equal distance from the root node.")
-  }
+  #if (!ape::is.ultrametric(phy)) {
+  #  message("Note: Input 'phy' tree is not ultrametric. The M statistic does not require ultrametric trees, but interpret results with this in mind.")
+  #}
   if (!ape::is.binary(phy)) {
     if (auto_multi2di) {
       warning("The 'phy' tree contains some polytomies. Function multi2di() in ape package have been called to make phylogeney(tree) be dichotomous.", call. = FALSE)
@@ -186,6 +189,7 @@ M_stat <- function(trait_dist = NULL, phy = NULL, auto_multi2di = TRUE){
 #' with the definition, instead of relying on correlation analysis or evolutionary models.
 #' The novel method equivalently expressed the textual definition of the phylogenetic signal
 #' as an inequality equation of the phylogenetic and trait distances and constructed the M statistic.
+#' The M statistic implemented in this package is based on the methodology described in Yao and Yuan (2025) <doi:10.1002/ece3.71106>. If you use this method in your research, please cite the paper.
 #'
 #' @param trait_dist A distance object of class `matrix` or `dist`.
 #'    Its row and column names should match the tip labels of the phylogenetic tree (`phy`).
@@ -203,6 +207,8 @@ M_stat <- function(trait_dist = NULL, phy = NULL, auto_multi2di = TRUE){
 #'    component `$observed` is the value of M statistic obtained from the original input data.
 #' @references
 #'    Blomberg, S.P. & Garland, T., Jr (2002) Tempo and mode in evolution: phylogenetic inertia, adaptation and comparative methods. Journal of Evolutionary Biology, 15(6): 899-910.
+#'
+#'    Yao, L. and Yuan, Y. (2025), A Unified Method for Detecting Phylogenetic Signals in Continuous, Discrete, and Multiple Trait Combinations. Ecology and Evolution, 15: e71106.
 #'
 #'
 #' @seealso [M_stat()] [phylosignal_M()]
@@ -251,9 +257,9 @@ M_rand_perm <- function(trait_dist = NULL, phy = NULL, reps = 999, auto_multi2di
   if (!ape::is.rooted(phy)) {
     stop("The 'phy' tree must be rooted.")
   }
-  if (!ape::is.ultrametric(phy)) {
-    stop("The 'phy' tree is not ultrametric such that all tips are at equal distance from the root node.")
-  }
+  #if (!ape::is.ultrametric(phy)) {
+  #  message("Note: Input 'phy' tree is not ultrametric. The M statistic does not require ultrametric trees, but interpret results with this in mind.")
+  #}
   if (!ape::is.binary(phy)) {
     if (auto_multi2di) {
       warning("The 'phy' tree contains some polytomies. Function multi2di() in ape package have been called to make phylogeney(tree) be dichotomous.", call. = FALSE)
@@ -395,6 +401,7 @@ M_rand_perm <- function(trait_dist = NULL, phy = NULL, reps = 999, auto_multi2di
 #' with the definition, instead of relying on correlation analysis or evolutionary models.
 #' The novel method equivalently expressed the textual definition of the phylogenetic signal
 #' as an inequality equation of the phylogenetic and trait distances and constructed the M statistic.
+#' The M statistic implemented in this package is based on the methodology described in Yao and Yuan (2025) <doi:10.1002/ece3.71106>. If you use this method in your research, please cite the paper.
 #'
 #' @param trait_dist A distance object of class `matrix` or `dist`.
 #'    Its row and column names should match the tip labels of the phylogenetic tree (`phy`).
@@ -415,6 +422,8 @@ M_rand_perm <- function(trait_dist = NULL, phy = NULL, reps = 999, auto_multi2di
 #'    component `$observed` is the value of M statistic obtained from the original input data.
 #' @references
 #'    Blomberg, S.P. & Garland, T., Jr (2002) Tempo and mode in evolution: phylogenetic inertia, adaptation and comparative methods. Journal of Evolutionary Biology, 15(6): 899-910.
+#'
+#'    Yao, L. and Yuan, Y. (2025), A Unified Method for Detecting Phylogenetic Signals in Continuous, Discrete, and Multiple Trait Combinations. Ecology and Evolution, 15: e71106.
 #'
 #'
 #' @seealso [M_stat()] [M_rand_perm()]
@@ -465,7 +474,7 @@ phylosignal_M <- function(trait_dist = NULL, phy = NULL, reps = 999,
     stop("The 'phy' tree must be rooted.")
   }
   if (!ape::is.ultrametric(phy)) {
-    stop("The 'phy' tree is not ultrametric such that all tips are at equal distance from the root node.")
+    message("Note: Input 'phy' tree is not ultrametric. The M statistic does not require ultrametric trees, but interpret results with this in mind.")
   }
   if (!ape::is.binary(phy)) {
     if (auto_multi2di) {

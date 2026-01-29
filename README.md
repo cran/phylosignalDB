@@ -4,7 +4,7 @@
 
 <!-- badges: end -->
 
-The goal of phylosignalDB is to provide a unified method, called *M* statistic, for detecting phylogenetic signals in continuous traits, discrete traits, and multi-trait combinations. Blomberg and Garland (2002) provided a widely accepted statistical definition of the phylogenetic signal, which is the "tendency for related species to resemble each other more than they resemble species drawn at random from the tree". The *M* statistic strictly adheres to the definition of phylogenetic signal, formulating an index and developing a method of testing in strict accordance with the definition, instead of relying on correlation analysis or evolutionary models. The novel method equivalently expressed the textual definition of the phylogenetic signal as an inequality equation of the phylogenetic and trait distances and constructed the *M* statistic. Also, there are more distance-based methods under development.
+The goal of phylosignalDB is to provide a unified method, called *M* statistic, for detecting phylogenetic signals in continuous traits, discrete traits, and multi-trait combinations. Blomberg and Garland (2002) provided a widely accepted statistical definition of the phylogenetic signal, which is the "tendency for related species to resemble each other more than they resemble species drawn at random from the tree". The *M* statistic strictly adheres to the definition of phylogenetic signal, formulating an index and developing a method of testing in strict accordance with the definition, instead of relying on correlation analysis or evolutionary models. The novel method equivalently expressed the textual definition of the phylogenetic signal as an inequality equation of the phylogenetic and trait distances and constructed the *M* statistic. The *M* statistic implemented in this package is based on the methodology described in Yao and Yuan (2025) <doi:10.1002/ece3.71106>. If you use this method in your research, please cite the paper.
 
 ## Installation
 
@@ -49,6 +49,8 @@ phylosignal_M(trait_dist, turtles$phylo, reps = 99) # reps=999 better
 ```
 
 ## References
+
+Yao, L. and Yuan, Y. (2025), A Unified Method for Detecting Phylogenetic Signals in Continuous, Discrete, and Multiple Trait Combinations. Ecology and Evolution, 15: e71106. https://doi.org/10.1002/ece3.71106
 
 Blomberg, S.P. & Garland, T., Jr (2002) Tempo and mode in evolution: phylogenetic inertia, adaptation and comparative methods. Journal of Evolutionary Biology, 15(6): 899-910.
 
